@@ -143,6 +143,14 @@ namespace Cv4
                         return true;
                     case "sars-cov-2":
                         return true;
+                    case "Sars-cov-2":
+                        return true;
+                    case "Covid-19":
+                        return true;
+                    case "Covid":
+                        return true;
+                    case "COVID":
+                        return true;
                     default:
                         break;
                 }

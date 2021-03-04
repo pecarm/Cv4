@@ -25,6 +25,7 @@ namespace Cv4
             Console.WriteLine("Nejdelsi slova: {0}", String.Join(", ", text.LongestWords()));
             Console.WriteLine("Nejkratsi slova: {0}", String.Join(", ", text.ShortestWords()));
             Console.WriteLine("Nejcetnejsi slova: {0}", String.Join(", ", text.MostCommonWords()));
+            Console.WriteLine("Je infikovany? {0}", text.IsInfected());
             Console.WriteLine("Slova dle abecedy: {0}", String.Join(", ", text.AlphSort()));
         }
     }
