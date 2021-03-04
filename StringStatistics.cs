@@ -10,20 +10,20 @@ namespace Cv4
     class StringStatistics
     {
         #region Attributes
-        private string input;
+        private string Input;
         #endregion
 
         #region Constructor
         public StringStatistics(string strinpt)
         {
-            input = strinpt;
+            Input = strinpt;
         }
         #endregion
 
         #region Methods
         public int CountWords()
         {
-            return SplitToWords(input).Length;
+            return SplitToWords(Input).Length;
         }
 
         public int CountRows()
@@ -33,13 +33,13 @@ namespace Cv4
             //"\n" +
             //"sit amet"
             //counts as 3 separate rows
-            return input.Split('\n').Length;
+            return Input.Split('\n').Length;
         }
 
         public int CountSentences()
         {
             string regex = @"(\.|\?|!)\s[A-Z]";
-            MatchCollection matches = Regex.Matches(input, regex);
+            MatchCollection matches = Regex.Matches(Input, regex);
             int i = 0;
             string[] separators = new string[matches.Count];
             foreach (Match match in matches)
@@ -48,12 +48,12 @@ namespace Cv4
                 i++;
             }
 
-            return input.Split(separators, StringSplitOptions.None).Length;
+            return Input.Split(separators, StringSplitOptions.None).Length;
         }
 
         public string[] LongestWords()
         {
-            string[] words = SplitToWords(input);
+            string[] words = SplitToWords(Input);
 
             int maxlength = 0;
             foreach (string word in words)
@@ -68,7 +68,7 @@ namespace Cv4
 
         public string[] ShortestWords()
         {
-            string[] words = SplitToWords(input);
+            string[] words = SplitToWords(Input);
 
             int minlength = Int32.MaxValue;
             foreach (string word in words)
@@ -83,7 +83,7 @@ namespace Cv4
         
         public string[] MostCommonWords()
         {
-            string[] words = SplitToWords(input);
+            string[] words = SplitToWords(Input);
             Dictionary<string, int> dictionary = new Dictionary<string, int>();
             foreach (string word in words)
             {
@@ -124,14 +124,14 @@ namespace Cv4
 
         public string[] AlphSort()
         {
-            string[] words = SplitToWords(input);
+            string[] words = SplitToWords(Input);
             Array.Sort(words);
             return words;
         }
 
         public bool IsInfected()
         {
-            string[] words = SplitToWords(input);
+            string[] words = SplitToWords(Input);
 
             foreach (string word in words)
             {
@@ -160,7 +160,7 @@ namespace Cv4
 
         private string[] SplitToWords(string text)
         {
-            //THIS METHOD splits the input string to an array of strings
+            //THIS METHOD splits the Input string to an array of strings
             //it also removes all instances of " - " as these are not a word BUT keeps all words with a hyphen (e.g. "half-life")
 
             char[] separators = new char[] { ' ', '.', ',', '?', '!', ';', '\n', '(', ')', '/' };
