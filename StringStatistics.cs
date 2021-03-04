@@ -10,7 +10,7 @@ namespace Cv4
     class StringStatistics
     {
         #region Attributes
-        public string input;
+        private string input;
         #endregion
 
         #region Constructor
