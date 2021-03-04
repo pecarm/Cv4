@@ -163,7 +163,7 @@ namespace Cv4
             //THIS METHOD splits the input string to an array of strings
             //it also removes all instances of " - " as these are not a word BUT keeps all words with a hyphen (e.g. "half-life")
 
-            char[] separators = new char[] { ' ', '.', ',', '?', '!', ';', '\n', '(', ')' };
+            char[] separators = new char[] { ' ', '.', ',', '?', '!', ';', '\n', '(', ')', '/' };
             string[] words = text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
             //Checks if there are any dashes and returns their indices.
