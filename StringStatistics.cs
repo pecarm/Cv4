@@ -129,6 +129,27 @@ namespace Cv4
             return words;
         }
 
+        public bool IsInfected()
+        {
+            string[] words = SplitToWords(input);
+
+            foreach (string word in words)
+            {
+                switch (word)
+                {
+                    case "covid":
+                        return true;
+                    case "covid-19":
+                        return true;
+                    case "sars-cov-2":
+                        return true;
+                    default:
+                        break;
+                }
+            }
+            return false;
+        }
+
         private string[] SplitToWords(string text)
         {
             //THIS METHOD splits the input string to an array of strings
